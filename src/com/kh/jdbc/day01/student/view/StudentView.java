@@ -19,7 +19,7 @@ public class StudentView {
 			case 1: 
 				// SELECT * FROM STUDENT_TBL
 				List<Student> sList = controller.printStudentList();
-				showAllStudent(sList);
+				showAllStudents(sList);
 				break;
 			case 2: 
 				break;
@@ -37,20 +37,22 @@ public class StudentView {
 		}
 	}
 	
-	private void showAllStudent(List<Student> sList) {
+	private void showAllStudents(List<Student> sList) {
 		System.out.println("===== 학생 전체 정보 출력 =====");
 		for(Student student : sList) {
-			System.out.printf("이름 : s%, 나이 : d%, 아이디 : %s, 성별 : %s, 이메일 : %s,"
-					+ "전화번호 : %s, 주소 : %s, 취미 : %s, 가입날짜 : %s\n",
-					student.getStudentName(),
-					student.getAge(),
-					student.getStudentId(),
-					student.getGender(),
-					student.getEmail(),
-					student.getPhone(),
-					student.getAddress(),
-					student.getHobby(),
-					student.getEnrollDate());
+			System.out.printf("이름 : %s, 나이 : %d, 아이디 : %s"
+					+ "성별 : %s, 이메일 : %s, 전화번호 : %s, 주소 : %s"
+					+ "취미 : %s, 가입날짜 : %s\n"
+					, student.getStudentName()
+					, student.getAge()
+					, student.getStudentId()
+					, student.getGender()
+					, student.getEmail()
+					, student.getPhone()
+					, student.getAddress()
+					, student.getHobby()
+					, student.getEnrollDate()
+			);
 		}
 	}
 
